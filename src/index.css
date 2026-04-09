@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colors - High-End Corporate palette */
+  --color-primary: #1C56A4; /* Pure Corporate Blue (No Grey) */
+  --color-secondary: #2C3E50; /* Executive Slate */
+  --color-accent: #1C56A4; /* Corporate Blue Accent */
+  --color-accent-hover: #164687; /* Darker Corporate Accent */
+  --color-tertiary: #D4AF37; /* Metallic Bronze/Gold */
+  --color-background: #F4F6F8; /* Light Platinum */
+  --color-surface: #FFFFFF; /* Pure White */
+  --color-text-main: #0B1120; /* Near Black */
+  --color-text-muted: #64748B; /* Professional slate text */
+  
+  /* Radii - Sharp and strict structural aesthetic */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  
+  /* Shadows - Smooth, high-fidelity shadows */
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 20px rgba(28, 86, 164, 0.25);
+
+  /* Glassmorphism - Retained to use ONLY on dark backgrounds */
+  --glass-bg: rgba(6, 15, 26, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(16px);
+
+  /* Typography */
+  --font-main: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--font-main);
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Accessibility Focus States */
+*:focus-visible {
+  outline: 2px solid var(--color-tertiary) !important;
+  outline-offset: 3px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+  line-height: 1.15;
+  letter-spacing: -0.03em; /* Corporate premium feel */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  letter-spacing: -0.03em;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.title.animate-line::after {
+  width: 60px;
+}
+
+.title.center {
+  text-align: center;
+}
+
+.title.center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+/* Page Headers (para páginas internas: Servicios, Proyectos, Contacto) */
+.page-header {
+  position: relative;
+  padding: 140px 0 60px; /* Compensa la altura del navbar fijo (80px) */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(11, 17, 32, 0.9), rgba(28, 86, 164, 0.75));
+  z-index: 1;
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-primary, .btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-sm); /* Sharp button edges */
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px);
+    filter: blur(12px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.95);
+    filter: blur(8px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); filter: blur(10px); }
+  to { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); filter: blur(10px); }
+  to { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Intersection Observer Base Classes */
+.reveal-on-scroll {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.reveal-on-scroll.is-revealed {
+  visibility: visible;
+}
+
+.reveal-up.is-revealed {
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-scale.is-revealed {
+  animation: scaleIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-left.is-revealed {
+  animation: slideInLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-right.is-revealed {
+  animation: slideInRight 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.30s; }
+.delay-3 { animation-delay: 0.45s; }
+.delay-4 { animation-delay: 0.60s; }
+
+/* Flat Premium Card (Replacing generic glass-card for content) */
+.premium-card {
+  background: var(--color-surface);
+  border-top: 2px solid transparent;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 2.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-top-color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+  .title {
+    font-size: 2.25rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0;
+  }
+  .title {
+    font-size: 1.75rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .title.animate-line::after {
+    width: 40px;
+  }
+}
+
+/* ==========================================================================
+   Accesibility WCAG & UI/UX Audit Fixes
+   ========================================================================== */
+
+/* 1. Texto sobre imágenes (Hero Banner y Proyectos) */
+.text-white {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.bg-dark {
+  background-color: var(--color-primary);
+}
+
+.project-overlay {
+  background: linear-gradient(to top, rgba(10, 25, 47, 0.98) 0%, rgba(10, 25, 47, 0.65) 60%, transparent 100%) !important;
+}
+
+/* 2. Botones CTA (Amarillos/Dorados y Rojos) */
+.btn-tertiary {
+  background-color: var(--color-tertiary);
+  color: var(--color-primary); /* Texto oscuro obligatorio sobre dorado para WCAG */
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-tertiary:hover {
+  background-color: #b5952f;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: #E63946; /* Rojo de alto contraste */
+  color: #FFFFFF;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-danger:hover {
+  background-color: #D62828;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* 3. Sección de Servicios (Fondo Invertido - Dark Mode) */
+.services-page p, 
+.services-page span,
+.services-page h1,
+.services-page h2,
+.services-page h3,
+.services-page h4,
+.services-page a:not(.btn-accent):not(.btn-primary):not(.btn-tertiary):not(.btn-danger) {
+  color: #e2e8f0; /* Asegura contraste seguro (~8:1) contra fondo negro */
+}
+
+/* Evitar enlaces oscuros transparentes en fondo negro */
+.services-page a:not(.btn-accent):not(.btn-primary):not(.btn-tertiary):not(.btn-danger):hover {
+  color: var(--color-accent);
+}
+
+/* 4. Navegación Móvil (Asegurar contraste de Cyán sobre fondo claro) */
+.mobile-link:hover, 
+.mobile-link:focus-visible {
+  color: var(--color-primary) !important; /* Se mantiene color oscuro */
+  background-color: rgba(28, 86, 164, 0.15) !important; /* Acento en el fondo, no en la fuente */
+  border-left: 4px solid var(--color-accent); /* Tracking visual WCAG */
+}
+
+.nav-link:hover, .nav-link:focus-visible {
+  color: var(--color-primary);
+}
+
