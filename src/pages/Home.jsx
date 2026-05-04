@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Shield, Settings } from 'lucide-react';
 import ImageSlider from '../components/ImageSlider';
@@ -6,6 +6,8 @@ import Logo3D from '../components/Logo3D';
 import './Home.css';
 
 const Home = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   return (
     <div className="home-page">
       {/* Hero Section */}
@@ -16,16 +18,15 @@ const Home = () => {
         <div className="container hero-content">
           <div className="hero-logo-wrapper reveal-on-scroll reveal-scale">
             <video
-              className="kling-logo-video"
+              className={`kling-logo-video ${videoLoaded ? 'video-loaded' : ''}`}
               autoPlay
               loop
               muted
               playsInline
-              poster="/Media/Portada.jpg"
+              onLoadedData={() => setVideoLoaded(true)}
               aria-label="Logo animado de Ciscontrolcamm"
             >
               <source src="/Media/kling_20260409_generate_3017_0.mp4" type="video/mp4" />
-              <img src="/Media/Portada.jpg" alt="Ciscontrolcamm" />
             </video>
           </div>
           <div className="hero-text">
