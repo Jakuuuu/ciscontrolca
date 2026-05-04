@@ -136,6 +136,7 @@
   box-shadow: 0 0 10px rgba(252, 185, 0, 0.5);
 }
 
+/* Tablet */
 @media (max-width: 992px) {
   .slider-container {
     height: 450px;
@@ -143,20 +144,27 @@
   .slide-content {
     padding: 3rem;
   }
+  .slide-content h3 {
+    font-size: 2rem;
+  }
 }
 
+/* Phone landscape / small tablet */
 @media (max-width: 768px) {
+  .image-slider-section {
+    padding: 3.5rem 0;
+  }
   .slider-container {
-    height: 400px;
+    height: 380px;
   }
   .slide-content {
     padding: 2rem;
   }
   .slide-content h3 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
   .slide-content p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   .slider-indicators {
     bottom: 1.5rem;
@@ -167,29 +175,56 @@
     width: 12px;
     height: 12px;
   }
+  .slider-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
 }
 
+/* Phone portrait */
 @media (max-width: 480px) {
+  .image-slider-section {
+    padding: 2.5rem 0;
+  }
   .slider-container {
-    height: 350px;
+    height: 300px;
+    border-radius: var(--radius-md);
   }
   .slide-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
   .slide-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
   }
   .slide-content p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
   .slider-indicators {
-    bottom: 1rem;
-    right: 1rem;
-    gap: 0.4rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    gap: 0.35rem;
   }
   .indicator {
     width: 10px;
     height: 10px;
   }
+  .slider-intro {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
+/* Small phone */
+@media (max-width: 360px) {
+  .slider-container {
+    height: 250px;
+  }
+  .slide-content h3 {
+    font-size: 1.15rem;
+  }
+  .slide-content p {
+    font-size: 0.8rem;
+  }
+}

@@ -290,6 +290,28 @@ button {
   border-top-color: var(--color-accent);
 }
 
+/* ==========================================================================
+   RESPONSIVE: Tablet (≤992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .section {
+    padding: 5rem 0;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .container {
+    padding: 0 1.5rem;
+  }
+  .page-header {
+    padding: 120px 0 50px;
+    min-height: 240px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE: Phone landscape / small tablet (≤768px)
+   ========================================================================== */
 @media (max-width: 768px) {
   .section {
     padding: 4rem 0;
@@ -300,8 +322,26 @@ button {
   .container {
     padding: 0 1rem;
   }
+  .subtitle {
+    font-size: 1.05rem;
+  }
+  .page-header {
+    padding: 110px 0 40px;
+    min-height: 220px;
+    background-attachment: scroll; /* Fix jittery parallax on touch */
+  }
+  .premium-card {
+    padding: 2rem 1.5rem;
+  }
+  .btn-primary, .btn-accent {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.95rem;
+  }
 }
 
+/* ==========================================================================
+   RESPONSIVE: Phone portrait (≤480px)
+   ========================================================================== */
 @media (max-width: 480px) {
   .section {
     padding: 3rem 0;
@@ -315,8 +355,21 @@ button {
   .title.animate-line::after {
     width: 40px;
   }
+  .page-header {
+    padding: 100px 0 30px;
+    min-height: 180px;
+  }
+  .premium-card {
+    padding: 1.5rem 1rem;
+  }
+  .premium-card:hover {
+    transform: translateY(-4px);
+  }
 }
 
+/* ==========================================================================
+   RESPONSIVE: Small phone (≤360px)
+   ========================================================================== */
 @media (max-width: 360px) {
   .section {
     padding: 2rem 0;
@@ -329,6 +382,9 @@ button {
   }
   .title.animate-line::after {
     width: 30px;
+  }
+  .container {
+    padding: 0 0.75rem;
   }
 }
 
@@ -414,4 +470,3 @@ button {
 .nav-link:hover, .nav-link:focus-visible {
   color: var(--color-primary);
 }
-

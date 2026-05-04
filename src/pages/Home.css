@@ -8,7 +8,6 @@
   overflow: hidden;
 }
 
-
 .hero-bg {
   position: absolute;
   top: 0;
@@ -18,7 +17,7 @@
   background-image: url('/Media/hero_worker.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Parallax effect */
+  background-attachment: fixed;
   z-index: -2;
 }
 
@@ -33,13 +32,11 @@
 }
 
 .kling-logo-video {
-  width: 550px; /* Aumentamos un poco el tamaño para que se vea más */
+  width: 550px;
   max-width: 100%;
   border-radius: 20px;
-  /* Transición ultra-suave desde el 30% para que no parezca un círculo recortado */
   -webkit-mask-image: radial-gradient(50% 50% at 50% 50%, black 30%, transparent 100%);
   mask-image: radial-gradient(50% 50% at 50% 50%, black 30%, transparent 100%);
-  /* Magia de integración: multiplica el color, haciendo el fondo blanco del video 100% transparente de forma nativa */
   mix-blend-mode: multiply;
 }
 
@@ -51,13 +48,8 @@
   gap: 4rem;
 }
 
-.hero-logo-wrapper {
-  flex-shrink: 0;
-}
-
-.hero-text {
-  flex: 1;
-}
+.hero-logo-wrapper { flex-shrink: 0; }
+.hero-text { flex: 1; }
 
 .hero-title {
   font-size: 4rem;
@@ -68,15 +60,13 @@
 }
 
 .trayectoria-text {
-  color: #212529; /* Oscuro, no azul */
+  color: #212529;
   display: inline-block;
   opacity: 0;
   animation: heroOpacityFade 1.2s ease-out forwards;
 }
 
-.text-accent {
-  color: #A42526;
-}
+.text-accent { color: #A42526; }
 
 .mission-text {
   display: inline-block;
@@ -95,7 +85,7 @@
   text-shadow: none !important;
   opacity: 0;
   animation: heroOpacityFade 1.2s ease-out forwards;
-  animation-delay: 1.2s; /* Aparece después del título */
+  animation-delay: 1.2s;
 }
 
 .hero-actions-anim {
@@ -110,14 +100,8 @@
 }
 
 @keyframes heroOpacityFade {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Features Grid */
@@ -159,16 +143,9 @@
   transform: scale(1.05);
 }
 
-.feature-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
+.feature-card h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+.feature-card p { color: var(--color-text-muted); }
 
-.feature-card p {
-  color: var(--color-text-muted);
-}
-
-/* Highlighted Feature Card */
 .feature-card.highlighted {
   border: 2px solid var(--color-accent);
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -187,18 +164,10 @@
   overflow: hidden;
 }
 
-.align-center {
-  text-align: center;
-  margin-bottom: 3rem;
-}
+.align-center { text-align: center; margin-bottom: 3rem; }
 
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
+.carousel-wrapper { position: relative; width: 100%; overflow: hidden; }
 
-/* Base fade gradient for boundaries */
 .carousel-wrapper::before,
 .carousel-wrapper::after {
   content: "";
@@ -225,12 +194,7 @@
   animation: scroll 20s linear infinite;
 }
 
-.logo-slide {
-  width: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.logo-slide { width: 250px; display: flex; justify-content: center; align-items: center; }
 
 .alliance-logo {
   filter: grayscale(100%);
@@ -255,62 +219,7 @@
   100% { transform: translateX(calc(-250px * 4)); }
 }
 
-@media (max-width: 992px) {
-  .hero-title {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .hero-title {
-    font-size: 2.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  .hero-actions a {
-    width: 100%;
-  }
-  .features-section {
-    margin-top: -40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    min-height: 500px;
-  }
-  .kling-logo-video {
-    width: 100%;
-    height: auto;
-  }
-  .hero-title {
-    font-size: 2rem;
-  }
-  .hero-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-  }
-  .features-section {
-    margin-top: 0;
-  }
-}
-
-/* ==========================================================================
-   Parallax Divider Section
-   ========================================================================== */
+/* Parallax Divider */
 .parallax-divider {
   position: relative;
   height: 60vh;
@@ -319,29 +228,23 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: 1; /* Establish stacking context */
-  background-color: var(--color-primary); /* Fallback */
+  z-index: 1;
+  background-color: var(--color-primary);
 }
 
 .parallax-bg-img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   background-image: url('/Media/Portada.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Parallax effect */
+  background-attachment: fixed;
   z-index: 1;
 }
 
 .parallax-divider-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   background: linear-gradient(135deg, rgba(6, 15, 26, 0.85) 0%, rgba(6, 15, 26, 0.6) 100%);
   z-index: 2;
 }
@@ -354,20 +257,59 @@
   padding: 0 2rem;
 }
 
-.parallax-content .title {
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-}
+.parallax-content .title { color: #ffffff; margin-bottom: 1.5rem; }
+.parallax-content .subtitle { color: #e2e8f0; margin: 0 auto 2rem; }
 
-.parallax-content .subtitle {
-  color: #e2e8f0;
-  margin: 0 auto 2rem;
-}
-
-/* Fix iOS Parallax Jittering */
+/* Fix iOS Parallax */
 @media (hover: none) and (pointer: coarse) {
-  .hero-bg, .parallax-bg-img {
-    background-attachment: scroll !important;
-  }
+  .hero-bg, .parallax-bg-img { background-attachment: scroll !important; }
 }
 
+/* === Tablet === */
+@media (max-width: 992px) {
+  .hero-section { height: auto; min-height: 500px; padding: 100px 0 60px; }
+  .hero-content { gap: 2.5rem; }
+  .hero-title { font-size: 3rem; }
+  .kling-logo-video { width: 400px; }
+}
+
+/* === Phone landscape / small tablet === */
+@media (max-width: 768px) {
+  .hero-section { min-height: auto; padding: 85px 0 50px; }
+  .hero-content { flex-direction: column; text-align: center; gap: 2rem; }
+  .hero-title { font-size: 2.5rem; }
+  .hero-subtitle { margin-left: auto; margin-right: auto; }
+  .hero-actions { flex-direction: column; width: 100%; align-items: center; }
+  .hero-actions a { width: 100%; max-width: 320px; text-align: center; }
+  .features-section { margin-top: -30px; }
+  .kling-logo-video { width: 320px; }
+  .carousel-wrapper::before, .carousel-wrapper::after { width: 60px; }
+  .alianzas-section { padding: 3rem 0; }
+  .alianzas-carousel { width: calc(180px * 8); }
+  .logo-slide { width: 180px; }
+  .alliance-logo { font-size: 1.15rem; }
+  .parallax-divider { height: auto; min-height: 300px; padding: 4rem 0; }
+  .parallax-bg-img { background-attachment: scroll; }
+}
+
+/* === Phone portrait === */
+@media (max-width: 480px) {
+  .hero-section { padding: 75px 0 35px; }
+  .kling-logo-video { width: 100%; max-width: 280px; }
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 1.05rem; margin-bottom: 2rem; }
+  .features-section { margin-top: 0; padding-bottom: 3rem; }
+  .features-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .carousel-wrapper::before, .carousel-wrapper::after { width: 30px; }
+  .alianzas-carousel { width: calc(150px * 8); }
+  .logo-slide { width: 150px; }
+  .alliance-logo { font-size: 1rem; }
+  .parallax-divider { min-height: 250px; padding: 3rem 0; }
+}
+
+/* === Small phone === */
+@media (max-width: 360px) {
+  .hero-title { font-size: 1.7rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .kling-logo-video { max-width: 240px; }
+}
