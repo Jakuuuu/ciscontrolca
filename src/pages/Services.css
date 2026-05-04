@@ -134,3 +134,15 @@
   }
 }
 
+@media (max-width: 480px) {
+  .service-img {
+    aspect-ratio: 16/9;
+  }
+  .service-desc {
+    font-size: 1rem;
+  }
+  .services-header-unified {
+    margin-bottom: 3rem;
+  }
+}
+

@@ -31,6 +31,12 @@
 
   /* Typography */
   --font-main: 'Inter', sans-serif;
+
+  /* Border & extended text aliases (used by Projects, ImageSlider, etc.) */
+  --color-border: #E0E7FF;
+  --color-border-hover: #1C56A4;
+  --color-text: #0B1120;
+  --color-text-light: #94a3b8;
 }
 
 * {
@@ -311,6 +317,21 @@ button {
   }
 }
 
+@media (max-width: 360px) {
+  .section {
+    padding: 2rem 0;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  .title.animate-line::after {
+    width: 30px;
+  }
+}
+
 /* ==========================================================================
    Accesibility WCAG & UI/UX Audit Fixes
    ========================================================================== */
@@ -379,7 +400,7 @@ button {
 
 /* Evitar enlaces oscuros transparentes en fondo negro */
 .services-page a:not(.btn-accent):not(.btn-primary):not(.btn-tertiary):not(.btn-danger):hover {
-  color: var(--color-accent);
+  color: #77B2FF;
 }
 
 /* 4. Navegación Móvil (Asegurar contraste de Cyán sobre fondo claro) */

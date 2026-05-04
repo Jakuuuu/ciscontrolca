@@ -10,19 +10,23 @@ const Home = () => {
     <div className="home-page">
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="hero-bg" style={{ backgroundImage: "url('/Media/hero_worker.png')" }}>
+        <div className="hero-bg">
           <div className="hero-overlay"></div>
         </div>
         <div className="container hero-content">
           <div className="hero-logo-wrapper reveal-on-scroll reveal-scale">
-            <video 
+            <video
               className="kling-logo-video"
-              autoPlay 
-              loop 
-              muted 
+              autoPlay
+              loop
+              muted
               playsInline
-              src="/Media/kling_20260409_generate_3017_0.mp4"
-            ></video>
+              poster="/Media/Portada.jpg"
+              aria-label="Logo animado de Ciscontrolcamm"
+            >
+              <source src="/Media/kling_20260409_generate_3017_0.mp4" type="video/mp4" />
+              <img src="/Media/Portada.jpg" alt="Ciscontrolcamm" />
+            </video>
           </div>
           <div className="hero-text">
             <h1 className="hero-title">
@@ -45,7 +49,7 @@ const Home = () => {
 
       {/* Parallax Divider */}
       <section className="parallax-divider">
-        <div className="parallax-bg-img" style={{ backgroundImage: "url('/Media/Portada.jpg')" }}></div>
+        <div className="parallax-bg-img"></div>
         <div className="parallax-divider-overlay"></div>
         <div className="container parallax-content reveal-on-scroll reveal-scale">
           <h2 className="title align-center">Innovación en Infraestructura</h2>

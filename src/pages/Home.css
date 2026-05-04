@@ -15,6 +15,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background-image: url('/Media/hero_worker.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Parallax effect */
@@ -260,6 +261,12 @@
   }
 }
 
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
@@ -271,6 +278,10 @@
   }
   .hero-actions {
     flex-direction: column;
+    width: 100%;
+  }
+  .hero-actions a {
+    width: 100%;
   }
   .features-section {
     margin-top: -40px;
@@ -280,6 +291,10 @@
 @media (max-width: 480px) {
   .hero-section {
     min-height: 500px;
+  }
+  .kling-logo-video {
+    width: 100%;
+    height: auto;
   }
   .hero-title {
     font-size: 2rem;
@@ -314,6 +329,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background-image: url('/Media/Portada.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Parallax effect */

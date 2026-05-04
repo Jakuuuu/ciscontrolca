@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    e.target.reset();
+    setTimeout(() => setSubmitted(false), 5000);
+  };
+
   return (
     <div className="contact-page">
-      <div className="page-header" style={{ backgroundImage: "url('/Media/service_safety.png')", backgroundPosition: "center" }}>
+      <div className="page-header contact-header">
         <div className="header-overlay"></div>
         <div className="container">
           <h1 className="title text-white">Contáctenos</h1>
@@ -29,7 +38,7 @@ const Contact = () => {
                   <Phone className="info-icon" size={28} />
                   <div>
                     <h3>Teléfono</h3>
-                    <p>+58 (XXX) XXX-XXXX</p>
+                    <p>+58 (412) 824-9898</p>
                     <p>Lunes a Viernes, 8:00am - 5:00pm</p>
                   </div>
                 </div>
@@ -57,7 +66,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="contact-form-container glass-card">
               <h3 className="form-title">Envíenos un Mensaje</h3>
-              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+              <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="name">Nombre Completo</label>
                   <input type="text" id="name" placeholder="Ej. Carlos Pérez" required />
@@ -75,8 +84,8 @@ const Contact = () => {
                 
                 <div className="form-group">
                   <label htmlFor="service">Servicio de Interés</label>
-                  <select id="service" required>
-                    <option value="" disabled selected>Seleccione un área</option>
+                  <select id="service" defaultValue="" required>
+                    <option value="" disabled>Seleccione un área</option>
                     <option value="automatizacion">Automatización y Control</option>
                     <option value="energia">Calidad Eléctrica</option>
                     <option value="corrosion">Corrosión</option>
@@ -94,6 +103,11 @@ const Contact = () => {
                 <button type="submit" className="btn-accent submit-btn">
                   Enviar Requerimiento <Send size={18} />
                 </button>
+                {submitted && (
+                  <p className="form-success" role="status" aria-live="polite">
+                    ✓ Su mensaje fue enviado correctamente. Le contactaremos a la brevedad.
+                  </p>
+                )}
               </form>
             </div>
 

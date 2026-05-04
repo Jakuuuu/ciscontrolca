@@ -6,11 +6,11 @@ const About = () => {
     <div className="about-page">
       {/* Bloque Introductorio */}
       <section className="section intro-section">
-        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+        <div className="container intro-container">
           <div className="intro-section-split">
             <div className="intro-text-block reveal-on-scroll reveal-up">
-              <h2 className="title text-white">Integración<br/><span style={{ color: '#FADB5F' }}>Multidisciplinaria</span></h2>
-              <p className="text-light-blue" style={{ fontSize: '1.15rem', color: '#E2E8F0', lineHeight: 1.8 }}>
+              <h2 className="title text-white">Integración<br/><span className="intro-accent">Multidisciplinaria</span></h2>
+              <p className="text-light-blue intro-paragraph">
                 Integramos un equipo multidisciplinario altamente capacitado para resolver los desafíos técnicos más complejos de la industria. Fusionamos diversas ramas de la ingeniería y nos apoyamos en alianzas estratégicas sólidas para garantizar la seguridad, eficiencia y continuidad operativa de sus infraestructuras en <strong>CIS CONTROL, C.A.</strong> y <strong>Control Integral MM, C.A.</strong>
               </p>
               

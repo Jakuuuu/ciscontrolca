@@ -51,7 +51,7 @@ const Projects = () => {
       {/* Galería de Proyectos / Carrusel */}
       <section className="section bg-light" style={{ paddingTop: '10rem' }}>
         <div className="container">
-          <h1 className="title center mb-section animated-gallery-title fade-in-up">Galería de Obras Destacadas</h1>
+          <h1 className="title center mb-section animated-gallery-title animated-gradient-text">Galería de Obras Destacadas</h1>
           
           <div className="carousel-container">
             <button className="carousel-btn left" onClick={scrollLeft} aria-label="Desplazar a la izquierda">
@@ -83,7 +83,7 @@ const Projects = () => {
       {/* Clientes de Alta Autoridad */}
       <section className="section">
         <div className="container">
-          <h2 className="title align-center mb-section">Han Confiado en Nosotros</h2>
+          <h2 className="title center mb-section animated-gradient-text">Han Confiado en Nosotros</h2>
           <div className="clients-grid">
             {clients.map((client, index) => (
               <div className="client-card reveal-on-scroll reveal-up" style={{ animationDelay: `${index * 0.05}s` }} key={client}>
@@ -97,7 +97,7 @@ const Projects = () => {
       {/* Trayectoria / Timeline */}
       <section className="section bg-timeline-gray py-timeline">
         <div className="container">
-          <h2 className="title align-center mb-section">Nuestra Trayectoria Histórica</h2>
+          <h2 className="title center mb-section animated-gradient-text">Nuestra Trayectoria Histórica</h2>
           <div className="timeline-container horizontal">
             <div className="timeline-line reveal-on-scroll"></div>
             <div className="timeline-items">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Logo3D.css';
 
 const SVGIsotipo = ({ isFrontal }) => (
@@ -15,17 +15,22 @@ const Logo3D = () => {
   const layers = Array.from({ length: 80 });
   const [rotate, setRotate] = useState({ x: 15, y: -35 });
   const [hovered, setHovered] = useState(false);
+  const rafRef = useRef(null);
 
   const handleMouseMove = (e) => {
-    // Calculamos rotación en base a la ubicación del ratón
     const rect = e.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
-    const xAxis = (centerX - e.clientX) / 10;
-    const yAxis = (centerY - e.clientY) / 10;
-    
-    setRotate({ x: -yAxis, y: xAxis });
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+
+    if (rafRef.current) return;
+    rafRef.current = requestAnimationFrame(() => {
+      const xAxis = (centerX - clientX) / 10;
+      const yAxis = (centerY - clientY) / 10;
+      setRotate({ x: -yAxis, y: xAxis });
+      rafRef.current = null;
+    });
   };
 
   return (

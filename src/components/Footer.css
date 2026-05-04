@@ -93,3 +93,12 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 480px) {
+  .brand-col {
+    min-width: 100%;
+  }
+  .contact-col {
+    min-width: 100%;
+  }
+}

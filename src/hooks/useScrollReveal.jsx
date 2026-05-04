@@ -26,7 +26,7 @@ const useScrollReveal = () => {
 
     // Cleanup
     return () => {
-      elements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
     };
   }, [location.pathname]); // Re-run when the route changes
 };

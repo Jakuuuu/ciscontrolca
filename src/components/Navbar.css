@@ -18,7 +18,6 @@
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 10px 30px rgba(6, 15, 26, 0.08); /* deeper blue shadow */
   border-bottom: 1px solid rgba(255, 255, 255, 0.8);
-  height: 70px;
 }
 
 .navbar-container {
@@ -145,6 +144,18 @@
   }
   .navbar-container {
     padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 40px;
+  }
+  .logo-text {
+    font-size: 1.25rem;
+  }
+  .navbar-container {
+    padding: 0 0.5rem;
   }
 }
 

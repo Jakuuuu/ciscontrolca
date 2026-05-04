@@ -14,15 +14,21 @@
   color: var(--color-primary) !important;
 }
 
-.animated-gallery-title {
-  font-size: 3.5rem !important; /* Make it more prominent */
+.animated-gradient-text {
   background: linear-gradient(90deg, var(--color-primary), var(--color-tertiary), var(--color-primary));
   background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shine-text 5s linear infinite, scaleIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
   text-shadow: none !important;
+  animation: shine-text 5s linear infinite !important;
+}
+
+.animated-gallery-title {
+  font-size: 3.5rem !important; /* Make it more prominent */
+  opacity: 0;
+  animation: shine-text 5s linear infinite, scaleIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
 }
 
 @keyframes shine-text {
@@ -460,6 +466,25 @@
   .project-card-carousel {
     flex: 0 0 85%;
     min-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-content {
+    width: calc(100% - 35px);
+    margin-left: 35px !important;
+    padding: 1rem;
+  }
+  .timeline-line {
+    left: 10px;
+  }
+  .timeline-dot {
+    left: 10px;
+    width: 15px;
+    height: 15px;
+  }
+  .timeline-year {
+    font-size: 1.25rem;
   }
 }
 

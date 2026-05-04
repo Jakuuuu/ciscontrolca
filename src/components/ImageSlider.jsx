@@ -27,7 +27,13 @@ const ImageSlider = () => {
             {images.map((img, index) => (
                <div key={index} className={`slide ${index === current ? 'active' : ''}`}>
                   <div className="slide-image-wrapper">
-                    <img src={img.url} alt={img.title} className="slide-image" />
+                    <img
+                      src={img.url}
+                      alt={img.title}
+                      className="slide-image"
+                      loading="lazy"
+                      onError={(e) => { e.currentTarget.style.opacity = '0.4'; }}
+                    />
                   </div>
                   <div className="slide-content">
                      <h3>{img.title}</h3>
