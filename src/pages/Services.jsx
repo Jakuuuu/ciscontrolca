@@ -11,7 +11,7 @@ const services = [
   },
   {
     id: 'ddce',
-    title: 'Desionizador de cargas electromagnéticas (DDCE)',
+    title: 'Deionizador de cargas electromagnéticas (DDCE)',
     image: '/Media/media_ddce_device.png',
     desc: 'Hemos integrado la tecnología DINNTECO para la protección contra descargas atmosféricas que consiste en la deionización del área que protege evitando la descarga de rayos.',
     features: ['Torres de comunicación y transmisión', 'Tanques de almacenamiento de crudo', 'Radares', 'Refinerías', 'Aeropuertos']

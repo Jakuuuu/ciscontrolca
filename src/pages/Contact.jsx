@@ -38,7 +38,7 @@ const Contact = () => {
                   <Phone className="info-icon" size={28} />
                   <div>
                     <h3>Teléfono</h3>
-                    <p>+58 (412) 824-9898</p>
+                    <p>04241245656</p>
                     <p>Lunes a Viernes, 8:00am - 5:00pm</p>
                   </div>
                 </div>
@@ -47,8 +47,7 @@ const Contact = () => {
                   <Mail className="info-icon" size={28} />
                   <div>
                     <h3>Correo Electrónico</h3>
-                    <p>contacto@ciscontrol.com</p>
-                    <p>proyectos@ciscontrol.com</p>
+                    <p>info@ciscontrolmm.com</p>
                   </div>
                 </div>
                 
