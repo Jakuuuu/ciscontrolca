@@ -39,17 +39,17 @@ const NavbarV2 = () => {
   return (
     <header className={`ref-header-v2 ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container ref-header-container-v2">
-        <Link to="/v2" className="ref-logo-v2">
+        <Link to="/" className="ref-logo-v2">
           <img src="/Media/logo.png" alt="Ciscontrol" className="ref-logo-img-v2" />
         </Link>
 
         {/* Desktop Menu */}
         <nav className="ref-desktop-menu-v2">
-          <Link to="/v2" className={`ref-nav-link-v2 ${location.pathname === '/v2' ? 'active' : ''}`}>Inicio</Link>
-          <Link to="/v2/nosotros" className={`ref-nav-link-v2 ${location.pathname === '/v2/nosotros' ? 'active' : ''}`}>Nosotros</Link>
-          <Link to="/v2/servicios" className={`ref-nav-link-v2 ${location.pathname === '/v2/servicios' ? 'active' : ''}`}>Servicios</Link>
-          <Link to="/v2/proyectos" className={`ref-nav-link-v2 ${location.pathname === '/v2/proyectos' ? 'active' : ''}`}>Proyectos</Link>
-          <Link to="/v2/contacto" className="ref-btn-contact-v2">Contacto</Link>
+          <Link to="/" className={`ref-nav-link-v2 ${location.pathname === '/' ? 'active' : ''}`}>Inicio</Link>
+          <Link to="/nosotros" className={`ref-nav-link-v2 ${location.pathname === '/nosotros' ? 'active' : ''}`}>Nosotros</Link>
+          <Link to="/servicios" className={`ref-nav-link-v2 ${location.pathname === '/servicios' ? 'active' : ''}`}>Servicios</Link>
+          <Link to="/proyectos" className={`ref-nav-link-v2 ${location.pathname === '/proyectos' ? 'active' : ''}`}>Proyectos</Link>
+          <Link to="/contacto" className="ref-btn-contact-v2">Contacto</Link>
         </nav>
 
         {/* Mobile menu button */}
@@ -60,11 +60,11 @@ const NavbarV2 = () => {
 
       {/* Mobile Menu Dropdown */}
       <div className={`ref-mobile-nav-v2 ${mobileMenuOpen ? 'open' : ''}`}>
-        <Link to="/v2" className="ref-mobile-link-v2">Inicio</Link>
-        <Link to="/v2/nosotros" className="ref-mobile-link-v2">Nosotros</Link>
-        <Link to="/v2/servicios" className="ref-mobile-link-v2">Servicios</Link>
-        <Link to="/v2/proyectos" className="ref-mobile-link-v2">Proyectos</Link>
-        <Link to="/v2/contacto" className="ref-mobile-link-v2 ref-btn-contact-mobile-v2">Contacto</Link>
+        <Link to="/" className="ref-mobile-link-v2">Inicio</Link>
+        <Link to="/nosotros" className="ref-mobile-link-v2">Nosotros</Link>
+        <Link to="/servicios" className="ref-mobile-link-v2">Servicios</Link>
+        <Link to="/proyectos" className="ref-mobile-link-v2">Proyectos</Link>
+        <Link to="/contacto" className="ref-mobile-link-v2 ref-btn-contact-mobile-v2">Contacto</Link>
       </div>
     </header>
   );

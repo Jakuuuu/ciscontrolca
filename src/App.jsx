@@ -23,22 +23,22 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Rutas Originales de Producción */}
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="nosotros" element={<About />} />
-          <Route path="servicios" element={<Services />} />
-          <Route path="proyectos" element={<Projects />} />
-          <Route path="contacto" element={<Contact />} />
-        </Route>
-
-        {/* Rutas Paralelas V2 - Blanco & Azul Refinado */}
-        <Route path="/v2" element={<LayoutV2 />}>
+        {/* Rutas Principales Definitivas (V2 - Blanco & Azul Refinado) */}
+        <Route path="/" element={<LayoutV2 />}>
           <Route index element={<HomeV2 />} />
           <Route path="nosotros" element={<About />} />
           <Route path="servicios" element={<Services />} />
           <Route path="proyectos" element={<ProjectsV2 />} />
           <Route path="contacto" element={<ContactV2 />} />
+        </Route>
+
+        {/* Rutas de Respaldo / Históricas (V1) */}
+        <Route path="/v1" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="nosotros" element={<About />} />
+          <Route path="servicios" element={<Services />} />
+          <Route path="proyectos" element={<Projects />} />
+          <Route path="contacto" element={<Contact />} />
         </Route>
         
         {/* Rutas de Vista Previa Interactiva */}

@@ -57,7 +57,7 @@ const CapacidadesBento = () => {
             <h2 className="cap-title">Soluciones de<br />Ingeniería Crítica</h2>
           </div>
           <div className="cap-link-block">
-            <Link to="/v2/servicios" className="cap-view-all-link">
+            <Link to="/servicios" className="cap-view-all-link">
               VER TODOS LOS SERVICIOS
             </Link>
           </div>
@@ -76,7 +76,7 @@ const CapacidadesBento = () => {
               <div className="cap-card-content">
                 <h3>{cap.title}</h3>
                 <p>{cap.desc}</p>
-                <Link to="/v2/servicios" className="cap-card-link">
+                <Link to="/servicios" className="cap-card-link">
                   {cap.linkText} <span className="line-suffix">──</span>
                 </Link>
               </div>

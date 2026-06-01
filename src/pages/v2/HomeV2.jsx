@@ -36,8 +36,8 @@ const HomeV2 = () => {
             {hero.subtitle}
           </p>
           <div className="hero-actions-v2">
-            <Link to="/v2/servicios" className="ref-btn-primary-v2">{hero.ctaText}</Link>
-            <Link to="/v2/proyectos" className="ref-btn-outline-v2">Ver Proyectos</Link>
+            <Link to="/servicios" className="ref-btn-primary-v2">{hero.ctaText}</Link>
+            <Link to="/proyectos" className="ref-btn-outline-v2">Ver Proyectos</Link>
           </div>
         </div>
       </section>
@@ -51,7 +51,7 @@ const HomeV2 = () => {
         <div className="parallax-divider-overlay-v2"></div>
         <div className="container parallax-content-v2 reveal-on-scroll reveal-scale">
           <h2 className="title align-center">Innovación en Infraestructura</h2>
-          <Link to="/v2/proyectos" className="ref-btn-primary-v2">Ver Proyectos Destacados</Link>
+          <Link to="/proyectos" className="ref-btn-primary-v2">Ver Proyectos Destacados</Link>
         </div>
       </section>
 
