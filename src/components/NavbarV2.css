@@ -27,13 +27,13 @@
 }
 
 .ref-logo-img-v2 {
-  height: 42px;
+  height: 48px;
   object-fit: contain;
   transition: height 0.3s ease;
 }
 
 .ref-header-v2.scrolled .ref-logo-img-v2 {
-  height: 36px;
+  height: 42px;
 }
 
 .ref-desktop-menu-v2 {
