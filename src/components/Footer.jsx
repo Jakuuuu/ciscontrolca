@@ -9,7 +9,7 @@ const Footer = () => {
         
         <div className="footer-col brand-col">
           <div className="footer-logo">
-            <img src="/Media/logo.png" alt="Ciscontrol" className="logo-img" style={{height: "52px", filter: "brightness(0) invert(1)"}} />
+            <img src="/Media/logo.png" alt="Ciscontrol" className="logo-img" style={{height: "60px", filter: "brightness(0) invert(1)"}} />
           </div>
         </div>
 

@@ -35,7 +35,7 @@
 }
 
 .logo-img {
-  height: 66px;
+  height: 76px;
 }
 
 .logo-text {
@@ -160,7 +160,7 @@
 /* Phone portrait */
 @media (max-width: 480px) {
   .logo-img {
-    height: 52px;
+    height: 60px;
   }
   .logo-text {
     font-size: 1.25rem;
@@ -183,7 +183,7 @@
 /* Small phone */
 @media (max-width: 360px) {
   .logo-img {
-    height: 48px;
+    height: 54px;
   }
   .logo-text {
     font-size: 1.1rem;
