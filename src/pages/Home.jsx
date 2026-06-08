@@ -74,7 +74,7 @@ const Home = () => {
                  <div className="alliance-logo"><span className="placeholder-text">Diselectar</span></div>
                </div>
                <div className="logo-slide">
-                 <div className="alliance-logo"><span className="placeholder-text">O&G Solutions</span></div>
+                 <div className="alliance-logo"><span className="placeholder-text">PC3</span></div>
                </div>
                <div className="logo-slide">
                  <div className="alliance-logo"><span className="placeholder-text">DINNTECO</span></div>
@@ -87,7 +87,7 @@ const Home = () => {
                  <div className="alliance-logo"><span className="placeholder-text">Diselectar</span></div>
                </div>
                <div className="logo-slide">
-                 <div className="alliance-logo"><span className="placeholder-text">O&G Solutions</span></div>
+                 <div className="alliance-logo"><span className="placeholder-text">PC3</span></div>
                </div>
                <div className="logo-slide">
                  <div className="alliance-logo"><span className="placeholder-text">DINNTECO</span></div>

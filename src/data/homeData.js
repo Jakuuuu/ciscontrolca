@@ -33,7 +33,7 @@ export const homeData = {
   alliances: [
     { name: 'Suminicor' },
     { name: 'Diselectar' },
-    { name: 'O&G Solutions' },
+    { name: 'PC3' },
     { name: 'DINNTECO' }
   ]
 };

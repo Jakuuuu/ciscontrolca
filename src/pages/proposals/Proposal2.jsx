@@ -118,7 +118,7 @@ const Proposal2 = () => {
               </div>
               <div className="contact-line">
                 <Phone size={16} />
-                <span>04241245656</span>
+                <span>04128245656</span>
               </div>
             </div>
           </div>

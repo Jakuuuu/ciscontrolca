@@ -173,7 +173,7 @@ const Proposal4 = () => {
               </div>
               <div className="ref-contact-item">
                 <Phone size={18} className="ref-footer-icon" />
-                <span>04241245656</span>
+                <span>04128245656</span>
               </div>
               <div className="ref-contact-item">
                 <Mail size={18} className="ref-footer-icon" />

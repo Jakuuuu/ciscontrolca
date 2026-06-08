@@ -6,10 +6,11 @@ import './ProjectsV2.css';
 
 const categories = [
   { id: 'all', label: 'TODOS LOS SECTORES' },
-  { id: 'automation', label: 'AUTOMATIZACIÓN' },
-  { id: 'electricity', label: 'ELECTRICIDAD' },
-  { id: 'telecom', label: 'TELECOMUNICACIONES' },
-  { id: 'safety', label: 'SEGURIDAD INDUSTRIAL' }
+  { id: 'electricidad', label: 'ELECTRICIDAD' },
+  { id: 'ddce', label: 'DDCE' },
+  { id: 'automatizacion', label: 'AUTOMATIZACIÓN' },
+  { id: 'corrosion', label: 'CORROSIÓN' },
+  { id: 'ftth', label: 'FTTH' }
 ];
 
 const ProjectsV2 = () => {

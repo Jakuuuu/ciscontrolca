@@ -19,7 +19,7 @@ const FooterV2 = () => {
             </div>
             <div className="ref-contact-item-v2">
               <Phone size={18} className="ref-footer-icon-v2" />
-              <span>04241245656</span>
+              <span>04128245656</span>
             </div>
             <div className="ref-contact-item-v2">
               <Mail size={18} className="ref-footer-icon-v2" />

@@ -37,7 +37,7 @@ const ContactV2 = () => {
                   <Phone className="info-icon-v2" size={24} />
                   <div>
                     <h3>Teléfono</h3>
-                    <p>04241245656</p>
+                    <p>04128245656</p>
                     <p className="sub-p-v2">Lunes a Viernes, 8:00am - 5:00pm</p>
                   </div>
                 </div>

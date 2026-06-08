@@ -38,7 +38,7 @@ const Contact = () => {
                   <Phone className="info-icon" size={28} />
                   <div>
                     <h3>Teléfono</h3>
-                    <p>04241245656</p>
+                    <p>04128245656</p>
                     <p>Lunes a Viernes, 8:00am - 5:00pm</p>
                   </div>
                 </div>
