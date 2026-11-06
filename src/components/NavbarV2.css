@@ -132,3 +132,62 @@
     margin-top: 1rem;
   }
 }
+
+/* =========================================================
+   Versión fondo oscuro: el header se funde con el hero
+   (Inicio y vistas previas /hero-*)
+   ========================================================= */
+.ref-header-v2.ref-header-dark-v2 {
+  background: linear-gradient(to bottom, rgba(11, 17, 32, 0.55), rgba(11, 17, 32, 0));
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+}
+
+.ref-header-v2.ref-header-dark-v2.scrolled,
+.ref-header-v2.ref-header-dark-v2.menu-open {
+  background: rgba(11, 17, 32, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: rgba(119, 178, 255, 0.12);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.ref-header-dark-v2 .ref-nav-link-v2 {
+  color: rgba(226, 232, 240, 0.78);
+}
+
+.ref-header-dark-v2 .ref-nav-link-v2:hover,
+.ref-header-dark-v2 .ref-nav-link-v2.active {
+  color: #FFFFFF !important;
+}
+
+.ref-header-dark-v2 .ref-nav-link-v2.active {
+  text-decoration: underline;
+  text-decoration-color: #77B2FF;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 9px;
+}
+
+.ref-header-dark-v2 .ref-btn-contact-v2:hover {
+  box-shadow: 0 4px 18px rgba(119, 178, 255, 0.25);
+}
+
+.ref-header-dark-v2 .ref-mobile-menu-btn-v2 {
+  color: #FFFFFF;
+}
+
+@media (max-width: 992px) {
+  .ref-header-dark-v2 .ref-mobile-nav-v2 {
+    background: #0b1120;
+    border-top: 1px solid rgba(119, 178, 255, 0.12);
+  }
+  .ref-header-dark-v2 .ref-mobile-link-v2 {
+    color: #F1F5F9;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .ref-header-dark-v2 .ref-btn-contact-mobile-v2 {
+    border-bottom: none;
+  }
+}

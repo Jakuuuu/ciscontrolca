@@ -7,6 +7,8 @@ const NavbarV2 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  // Inicio tiene hero oscuro: el header se integra al hero (versión fondo oscuro).
+  const isDark = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,10 +39,10 @@ const NavbarV2 = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`ref-header-v2 ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`ref-header-v2 ${isScrolled ? 'scrolled' : ''} ${isDark ? 'ref-header-dark-v2' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
       <div className="container ref-header-container-v2">
         <Link to="/" className="ref-logo-v2">
-          <img src="/Media/logo.png" alt="Ciscontrol" className="ref-logo-img-v2" />
+          <img src={isDark ? '/Media/logo-dark.png' : '/Media/logo.png'} alt="Ciscontrol" className="ref-logo-img-v2" />
         </Link>
 
         {/* Desktop Menu */}
@@ -53,7 +55,12 @@ const NavbarV2 = () => {
         </nav>
 
         {/* Mobile menu button */}
-        <button className="ref-mobile-menu-btn-v2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button
+          className="ref-mobile-menu-btn-v2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={mobileMenuOpen}
+        >
           {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
