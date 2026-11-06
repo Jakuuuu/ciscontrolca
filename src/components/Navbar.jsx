@@ -7,6 +7,13 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const [lastPath, setLastPath] = useState(location.pathname);
+
+  // Cerrar el menú al cambiar de ruta (ajuste de estado durante el render, sin efecto)
+  if (lastPath !== location.pathname) {
+    setLastPath(location.pathname);
+    setMobileMenuOpen(false);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,8 +24,6 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // Close mobile menu on route change
-    setMobileMenuOpen(false);
     window.scrollTo(0, 0);
   }, [location.pathname]);
 

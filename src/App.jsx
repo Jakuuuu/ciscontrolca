@@ -13,12 +13,6 @@ import HomeV2 from './pages/v2/HomeV2';
 import ProjectsV2 from './pages/v2/ProjectsV2';
 import ContactV2 from './pages/v2/ContactV2';
 
-// Páginas de Vista Previa de Propuestas
-import Proposal1 from './pages/proposals/Proposal1';
-import Proposal2 from './pages/proposals/Proposal2';
-import Proposal3 from './pages/proposals/Proposal3';
-import Proposal4 from './pages/proposals/Proposal4';
-
 function App() {
   return (
     <BrowserRouter>
@@ -40,12 +34,6 @@ function App() {
           <Route path="proyectos" element={<Projects />} />
           <Route path="contacto" element={<Contact />} />
         </Route>
-        
-        {/* Rutas de Vista Previa Interactiva */}
-        <Route path="/propuesta-1" element={<Proposal1 />} />
-        <Route path="/propuesta-2" element={<Proposal2 />} />
-        <Route path="/propuesta-3" element={<Proposal3 />} />
-        <Route path="/propuesta-4" element={<Proposal4 />} />
       </Routes>
     </BrowserRouter>
   );
