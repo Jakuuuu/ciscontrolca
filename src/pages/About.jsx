@@ -29,15 +29,15 @@ const About = () => {
                 </li>
                 <li className="reveal-on-scroll reveal-up delay-3">
                   <span className="icon gold-accent">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48 0a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg>
-                  </span>
-                  Despliegue de redes de fibra óptica (FTTH).
-                </li>
-                <li className="reveal-on-scroll reveal-up delay-4">
-                  <span className="icon gold-accent">
                     <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                   </span>
                   Sistemas de protección atmosférica (DDCE) y anticorrosión (SPRC).
+                </li>
+                <li className="reveal-on-scroll reveal-up delay-4">
+                  <span className="icon gold-accent">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48 0a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg>
+                  </span>
+                  Despliegue de redes de fibra óptica (FTTH).
                 </li>
               </ul>
             </div>
@@ -71,7 +71,7 @@ const About = () => {
               </div>
               <div className="card-body">
                 <p>
-                  Proveer soluciones integrales de ingeniería, diseño y ejecución de proyectos en electricidad, automatización, telecomunicaciones y protección atmosférica. Resolvemos desafíos técnicos aplicando tecnología de vanguardia para garantizar la seguridad, eficiencia y continuidad operativa de nuestros clientes a nivel nacional.
+                  Proveer soluciones integrales de ingeniería, diseño y ejecución de proyectos en electricidad, automatización, protección atmosférica, anticorrosión y fibra óptica. Resolvemos desafíos técnicos aplicando tecnología de vanguardia para garantizar la seguridad, eficiencia y continuidad operativa de nuestros clientes a nivel nacional.
                 </p>
               </div>
             </div>

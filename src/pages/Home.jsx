@@ -35,7 +35,7 @@ const Home = () => {
               <span className="text-accent mission-text">misión renovada</span>
             </h1>
             <p className="hero-subtitle">
-              Soluciones integrales de alta gama en automatización, energía, telecomunicaciones y protección atmosférica. Innovación y confiabilidad técnica para los desafíos más exigentes.
+              Soluciones integrales de alta gama en electricidad, automatización, protección atmosférica, anticorrosión y fibra óptica. Innovación y confiabilidad técnica para los desafíos más exigentes.
             </p>
             <div className="hero-actions hero-actions-anim">
               <Link to="/servicios" className="btn-accent">Conoce nuestros servicios</Link>

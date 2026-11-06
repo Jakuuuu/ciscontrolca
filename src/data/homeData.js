@@ -4,7 +4,7 @@ export const homeData = {
   hero: {
     titleLine1: 'Trayectoria sólida,',
     titleLine2: 'misión renovada',
-    subtitle: 'Soluciones integrales de alta gama en automatización, energía, telecomunicaciones y protección atmosférica. Innovación y confiabilidad técnica para los desafíos más exigentes.',
+    subtitle: 'Soluciones integrales de alta gama en electricidad, automatización, protección atmosférica, anticorrosión y fibra óptica. Innovación y confiabilidad técnica para los desafíos más exigentes.',
     videoSrc: '/Media/kling_20260409_generate_3017_0.mp4',
     ctaText: 'Conoce nuestros servicios'
   },

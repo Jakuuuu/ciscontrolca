@@ -8,6 +8,14 @@ const capacidades = [
     title: 'Electricidad',
     desc: 'Ingeniería eléctrica de alta y media tensión.',
     image: '/Media/service_electricity.png',
+    linkText: 'EXPLORAR DETALLES',
+    isWide: true
+  },
+  {
+    id: 'automatizacion',
+    title: 'Automatización Industrial',
+    desc: 'Sistemas PLC, SCADA y optimización de procesos mediante tecnología de vanguardia.',
+    image: '/Media/service_automation.png',
     linkText: 'SABER MÁS',
     isWide: false
   },
@@ -20,26 +28,18 @@ const capacidades = [
     isWide: false
   },
   {
-    id: 'ftth',
-    title: 'Red FTTH',
-    desc: 'Infraestructura de red robusta para entornos industriales.',
-    image: '/Media/fibra.png',
-    linkText: 'SABER MÁS',
-    isWide: false
-  },
-  {
-    id: 'automatizacion',
-    title: 'Automatización Industrial',
-    desc: 'Sistemas PLC, SCADA y optimización de procesos mediante tecnología de vanguardia.',
-    image: '/Media/service_automation.png',
-    linkText: 'EXPLORAR DETALLES',
-    isWide: true
-  },
-  {
     id: 'sprc',
     title: 'Sistemas de Corrosión',
     desc: 'Protección galvánica y monitoreo de integridad.',
     image: '/Media/corrosion.png',
+    linkText: 'SABER MÁS',
+    isWide: false
+  },
+  {
+    id: 'ftth',
+    title: 'Red FTTH',
+    desc: 'Infraestructura de red robusta para entornos industriales.',
+    image: '/Media/fibra.png',
     linkText: 'SABER MÁS',
     isWide: false
   }

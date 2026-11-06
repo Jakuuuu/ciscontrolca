@@ -55,8 +55,8 @@ const Contact = () => {
                   <MapPin className="info-icon" size={28} />
                   <div>
                     <h3>Sede Operativa</h3>
-                    <p>Centro de Ingeniería</p>
-                    <p>Edo. Zulia, Venezuela</p>
+                    <p>Torre BVC, PB, Oficina 13</p>
+                    <p>Avenida Andrés Bello (Intercomunal), Lechería, Estado Anzoátegui</p>
                   </div>
                 </div>
               </div>
@@ -85,11 +85,11 @@ const Contact = () => {
                   <label htmlFor="service">Servicio de Interés</label>
                   <select id="service" defaultValue="" required>
                     <option value="" disabled>Seleccione un área</option>
+                    <option value="energia">Electricidad</option>
                     <option value="automatizacion">Automatización y Control</option>
-                    <option value="energia">Calidad Eléctrica</option>
-                    <option value="corrosion">Corrosión</option>
-                    <option value="telecom">Telecomunicaciones</option>
                     <option value="ddce">Protección DDCE</option>
+                    <option value="corrosion">Corrosión (SPRC)</option>
+                    <option value="telecom">Fibra Óptica (FTTH)</option>
                     <option value="otro">Asesoría General</option>
                   </select>
                 </div>

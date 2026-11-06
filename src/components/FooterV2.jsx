@@ -9,13 +9,13 @@ const FooterV2 = () => {
         <div className="ref-footer-grid-v2">
           <div className="ref-footer-brand-v2">
             <img src="/Media/logo.png" alt="Ciscontrol" className="ref-footer-logo-v2" style={{ filter: "brightness(0) invert(1)" }} />
-            <p>Soluciones integrales de alta gama en automatización, energía, telecomunicaciones y protección atmosférica. Respaldando la industria nacional con total excelencia.</p>
+            <p>Soluciones integrales de alta gama en electricidad, automatización, protección atmosférica, anticorrosión y fibra óptica. Respaldando la industria nacional con total excelencia.</p>
           </div>
           
           <div className="ref-footer-contacts-v2">
             <div className="ref-contact-item-v2">
               <MapPin size={18} className="ref-footer-icon-v2" />
-              <span>Calle Tajalí D1-B, Urbanización Mar, Lechería, Estado Anzoátegui.</span>
+              <span>Torre BVC, PB, Oficina 13, Avenida Andrés Bello (Intercomunal), Lechería, Estado Anzoátegui.</span>
             </div>
             <div className="ref-contact-item-v2">
               <Phone size={18} className="ref-footer-icon-v2" />

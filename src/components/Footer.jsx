@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="contact-list">
             <div className="contact-item">
               <MapPin size={18} className="contact-icon" />
-              <span>Calle Tajalí D1-B, Urbanización Mar, Lechería, Estado Anzoátegui.</span>
+              <span>Torre BVC, PB, Oficina 13, Avenida Andrés Bello (Intercomunal), Lechería, Estado Anzoátegui.</span>
             </div>
             <div className="contact-item">
               <Phone size={18} className="contact-icon" />

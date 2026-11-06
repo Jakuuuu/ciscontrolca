@@ -7,10 +7,10 @@ import './ProjectsV2.css';
 const categories = [
   { id: 'all', label: 'TODOS LOS SECTORES' },
   { id: 'electricidad', label: 'ELECTRICIDAD' },
-  { id: 'ddce', label: 'DDCE' },
   { id: 'automatizacion', label: 'AUTOMATIZACIÓN' },
+  { id: 'ddce', label: 'DDCE' },
   { id: 'corrosion', label: 'CORROSIÓN' },
-  { id: 'ftth', label: 'FTTH' }
+  { id: 'ftth', label: 'FIBRA ÓPTICA' }
 ];
 
 const ProjectsV2 = () => {

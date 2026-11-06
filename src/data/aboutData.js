@@ -7,8 +7,8 @@ export const aboutData = {
     bulletPoints: [
       'Ingeniería y potencia eléctrica.',
       'Automatización e instrumentación industrial.',
-      'Despliegue de redes de fibra óptica (FTTH).',
-      'Sistemas de protección atmosférica (DDCE) y anticorrosión (SPRC).'
+      'Sistemas de protección atmosférica (DDCE) y anticorrosión (SPRC).',
+      'Despliegue de redes de fibra óptica (FTTH).'
     ],
     images: {
       main: '/Media/nosotros_img1.jfif',
@@ -19,7 +19,7 @@ export const aboutData = {
   identity: {
     mision: {
       title: 'Misión',
-      text: 'Proveer soluciones integrales de ingeniería, diseño y ejecución de proyectos en electricidad, automatización, telecomunicaciones y protección atmosférica. Resolvemos desafíos técnicos aplicando tecnología de vanguardia para garantizar la seguridad, eficiencia y continuidad operativa de nuestros clientes a nivel nacional.'
+      text: 'Proveer soluciones integrales de ingeniería, diseño y ejecución de proyectos en electricidad, automatización, protección atmosférica, anticorrosión y fibra óptica. Resolvemos desafíos técnicos aplicando tecnología de vanguardia para garantizar la seguridad, eficiencia y continuidad operativa de nuestros clientes a nivel nacional.'
     },
     vision: {
       title: 'Visión',

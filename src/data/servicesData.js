@@ -15,19 +15,6 @@ export const servicesData = [
     ]
   },
   {
-    id: 'ddce',
-    title: 'Deionizador de cargas electromagnéticas (DDCE)',
-    image: '/Media/media_ddce_device.png',
-    desc: 'Hemos integrado la tecnología DINNTECO para la protección contra descargas atmosféricas que consiste en la deionización del área que protege evitando la descarga de rayos.',
-    features: [
-      'Torres de comunicación y transmisión',
-      'Tanques de almacenamiento de crudo',
-      'Radares',
-      'Refinerías',
-      'Aeropuertos'
-    ]
-  },
-  {
     id: 'automatizacion',
     title: 'Automatización',
     image: '/Media/service_automation.png',
@@ -41,16 +28,16 @@ export const servicesData = [
     ]
   },
   {
-    id: 'ftth',
-    title: 'Despliegue FTTH',
-    image: '/Media/fibra.png',
-    desc: 'Contamos con una sólida trayectoria en el diseño, despliegue e instalación de redes de fibra óptica (FTTH) para servicios de internet.',
+    id: 'ddce',
+    title: 'Deionizador de cargas electromagnéticas (DDCE)',
+    image: '/Media/media_ddce_device_full.png',
+    desc: 'Hemos integrado la tecnología DINNTECO para la protección contra descargas atmosféricas que consiste en la deionización del área que protege evitando la descarga de rayos.',
     features: [
-      'Instalación de OLT',
-      'Diseño e ingeniería de despliegue de fibra óptica',
-      'Construcción de ODN',
-      'Acometidas a los hogares',
-      'Instalación de ONT'
+      'Torres de comunicación y transmisión',
+      'Tanques de almacenamiento de crudo',
+      'Radares',
+      'Refinerías',
+      'Aeropuertos'
     ]
   },
   {
@@ -64,6 +51,19 @@ export const servicesData = [
       'Entrada al separador',
       'Tanques de agua para inyección de pozos',
       'Entrada a intercambiador de calor, calderas y torres de enfriamiento'
+    ]
+  },
+  {
+    id: 'ftth',
+    title: 'Despliegue FTTH',
+    image: '/Media/fibra.png',
+    desc: 'Contamos con una sólida trayectoria en el diseño, despliegue e instalación de redes de fibra óptica (FTTH) para servicios de internet.',
+    features: [
+      'Instalación de OLT',
+      'Diseño e ingeniería de despliegue de fibra óptica',
+      'Construcción de ODN',
+      'Acometidas a los hogares',
+      'Instalación de ONT'
     ]
   }
 ];
