@@ -1,328 +1,407 @@
-.projects-page-v2 {
-  background-color: #F8FAFC;
-  padding-top: 100px;
+/* ==========================================================================
+   Proyectos (/proyectos) — estilos de página, prefijo .pj-
+   Base visual: src/styles/brand.css (.bx-) + PageHero. Aquí solo lo propio.
+   ========================================================================== */
+
+.pj-page {
+  background: var(--brand-navy);
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-.projects-section-v2 {
-  padding: 6rem 0;
-  background-color: #FFFFFF;
+.pj-page ul,
+.pj-page ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.ref-section-header-v2 {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 4rem auto;
-}
-
-.ref-section-title-v2 {
-  font-size: 3.25rem;
-  font-weight: 900;
-  color: #0F172A;
-  letter-spacing: -0.03em;
-  margin-bottom: 1rem;
-  line-height: 1.15;
-}
-
-.ref-section-desc-v2 {
-  font-size: 1.15rem;
-  color: #64748B;
-  line-height: 1.65;
-}
-
-/* Filter Bar */
-.filter-bar-v2 {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding-bottom: 1.5rem;
-  margin-bottom: 4rem;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.filter-label-v2 {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #64748B;
-}
-
-.filter-buttons-v2 {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.filter-btn-v2 {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(28, 86, 164, 0.15);
-  padding: 0.5rem 1.25rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #2C3E50;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border-radius: 2px;
-}
-
-.filter-btn-v2:hover {
-  border-color: #1C56A4;
-  color: #1C56A4;
-}
-
-.filter-btn-v2.active {
-  background-color: #1C56A4;
-  border-color: #1C56A4;
-  color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(28, 86, 164, 0.25);
-}
-
-/* Projects Grid */
-.ref-projects-grid-v2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-}
-
-.ref-project-card-v2 {
-  background-color: #FFFFFF;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 1px solid rgba(0, 0, 0, 0.02);
-  display: flex;
-  flex-direction: column;
-}
-
-.ref-project-img-holder-v2 {
-  height: 240px;
+/* --- Barra de filtros: consola navy con la lógica de la tira del hero ---- */
+.pj-filter {
   position: relative;
-  overflow: hidden;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem 2rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  padding: 1.1rem 1.25rem 1.1rem 1.75rem;
+  border: 1px solid rgba(119, 178, 255, 0.18);
+  border-radius: var(--brand-radius);
+  box-shadow: var(--brand-shadow-light);
 }
 
-.ref-project-img-holder-v2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.ref-project-cat-v2 {
+/* acento dorado sobre el borde superior, como el hero y PageHero */
+.pj-filter::after {
+  content: '';
   position: absolute;
-  bottom: 1.25rem;
-  left: 1.25rem;
-  background-color: #1C56A4;
-  color: #FFFFFF;
-  font-size: 0.65rem;
-  font-weight: 800;
-  padding: 0.35rem 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  z-index: 3;
+  top: -1px;
+  left: 1.75rem;
+  width: 56px;
+  height: 2px;
+  background: var(--brand-gold);
 }
 
-.ref-project-info-v2 {
-  padding: 2.25rem 2rem;
+.pj-filter-ticks {
+  inset: 8px;
+  --bx-tick: 10px;
+  --bx-tick-c: rgba(119, 178, 255, 0.45);
+}
+
+.pj-filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--brand-gold);
+}
+
+.pj-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pj-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 40px;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--brand-radius-sm);
+  background: rgba(13, 22, 40, 0.65);
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--brand-soft-dark);
+  cursor: pointer;
+  transition: border-color 0.35s ease, color 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.pj-filter-btn > i {
+  flex: none;
+  width: 8px;
+  height: 2px;
+  background: var(--brand-light);
+  opacity: 0.7;
+  transition: background-color 0.35s ease, opacity 0.35s ease;
+}
+
+.pj-filter-count {
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  color: rgba(148, 163, 184, 0.75);
+}
+
+.pj-filter-btn:hover {
+  border-color: rgba(119, 178, 255, 0.55);
+  color: #fff;
+}
+.pj-filter-btn:hover > i { opacity: 1; }
+
+.pj-filter-btn.is-active {
+  border-color: var(--brand-gold);
+  background: rgba(28, 86, 164, 0.22);
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.45), 0 8px 22px -8px rgba(212, 175, 55, 0.35);
+}
+.pj-filter-btn.is-active > i {
+  background: var(--brand-gold);
+  opacity: 1;
+}
+.pj-filter-btn.is-active .pj-filter-count {
+  color: var(--brand-gold);
+  border-left-color: rgba(212, 175, 55, 0.4);
+}
+
+.pj-filter-btn:focus-visible {
+  outline: 2px solid var(--brand-light) !important;
+  outline-offset: 2px;
+}
+
+/* --- Grilla de proyectos -------------------------------------------------- */
+.pj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: clamp(1.5rem, 2.4vw, 2rem);
+}
+
+.pj-item {
+  display: flex;
+  min-width: 0;
+}
+
+.pj-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+
+.pj-card.bx-card--accent::before {
+  z-index: 4;
+  left: 1.5rem;
+}
+
+/* foto dentro de la tarjeta: marco sin sombra propia, esquinas superiores */
+.pj-card .pj-card-frame {
+  aspect-ratio: 16 / 10;
+  border: 0;
+  border-bottom: 1px solid var(--brand-border-light);
+  border-radius: var(--brand-radius) var(--brand-radius) 0 0;
+  box-shadow: none;
+  /* placeholder mientras carga la foto (lazy): navy con retícula */
+  background-color: var(--brand-navy-3);
+  background-image:
+    linear-gradient(var(--brand-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--brand-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.pj-card-frame > img {
+  transition: transform 0.8s var(--brand-ease-out), filter 0.6s ease;
+}
+.pj-card:hover .pj-card-frame > img,
+.pj-card:focus-within .pj-card-frame > img {
+  transform: scale(1.04);
+  filter: saturate(1) contrast(1.04);
+}
+
+/* etiqueta de servicio: misma pieza que las fichas de la tira del hero */
+.pj-card .pj-card-tag {
+  position: absolute;
+  z-index: 3;
+  left: 1.25rem;
+  bottom: 1rem;
+  max-width: calc(100% - 5rem);
+  color: #f1f5f9;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.6);
+}
+.pj-card .pj-card-tag > i { background: var(--brand-gold); }
+
+.pj-card .pj-card-num {
+  position: absolute;
+  z-index: 3;
+  right: 1.25rem;
+  bottom: 1rem;
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.pj-card-body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  padding: 1.5rem 1.5rem 1.75rem;
 }
 
-.project-title-row-v2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+.pj-card-title {
+  margin-bottom: 1.1rem;
+  font-size: 1.12rem;
+  line-height: 1.35;
 }
 
-.ref-project-info-v2 h3 {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #0F172A;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin: 0;
-  flex-grow: 1;
+/* filas de metadatos con hairlines */
+.pj-page .pj-meta {
+  margin-bottom: 1.1rem;
+  border-top: 1px solid var(--brand-border-light);
 }
-
-.project-link-icon-v2 {
-  color: #1C56A4;
-  flex-shrink: 0;
-  margin-top: 3px;
-  opacity: 0.6;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Meta Grid */
-.project-meta-grid-v2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-  padding: 1.25rem 0;
-  margin-bottom: 1.5rem;
-}
-
-.meta-item-v2 {
+.pj-meta li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.68rem;
+  gap: 0.65rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--brand-border-light);
+  font-size: 0.72rem;
   font-weight: 700;
-  color: #64748B;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
   text-transform: uppercase;
+  color: #334155;
+}
+.pj-meta svg {
+  flex: none;
+  color: var(--brand-blue);
 }
 
-.meta-icon-v2 {
-  color: rgba(28, 86, 164, 0.4);
-  flex-shrink: 0;
+.pj-card-text {
+  font-size: 0.92rem;
 }
 
-.project-desc-text-v2 {
-  font-size: 0.95rem;
-  color: #64748B;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Card Hover */
-.ref-project-card-v2:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(28, 86, 164, 0.08);
-  border-color: rgba(28, 86, 164, 0.1);
-}
-
-.ref-project-card-v2:hover img {
-  transform: scale(1.04);
-}
-
-.ref-project-card-v2:hover .project-link-icon-v2 {
-  opacity: 1;
-  transform: translate(2px, -2px);
-}
-
-/* Clients and Timeline */
-.projects-clients-section-v2 {
-  padding: 6rem 0;
-  background-color: #F8FAFC;
-  border-top: 1px solid rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-}
-
-.clients-title-v2 {
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: #1C56A4;
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.clients-grid-v2 {
+/* --- Clientes (navy) ------------------------------------------------------ */
+.pj-clients-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  gap: 1rem;
 }
 
-.client-card-v2 {
-  background: #FFFFFF;
-  border: 1px solid rgba(28, 86, 164, 0.06);
-  padding: 1.5rem;
-  text-align: center;
-  border-radius: 4px;
+.pj-client {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s ease;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
 }
 
-.client-icon-v2 {
-  color: #D4AF37;
+.pj-client .pj-client-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  flex: none;
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.08);
+  color: var(--brand-gold);
 }
 
-.client-name-v2 {
+.pj-client-name {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #1C56A4;
+  line-height: 1.35;
+  color: #fff;
 }
 
-.client-card-v2:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(28, 86, 164, 0.05);
-  border-color: #D4AF37;
-}
-
-.projects-timeline-section-v2 {
-  padding: 8rem 0;
-  background-color: #FFFFFF;
-}
-
-.timeline-title-v2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #1C56A4;
-  text-align: center;
-  margin-bottom: 5rem;
-}
-
-.timeline-grid-v2 {
+/* --- Trayectoria (claro) -------------------------------------------------- */
+.pj-page .pj-timeline-list {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding-top: 2.25rem;
 }
 
-.timeline-card-v2 {
-  background: #F8FAFC;
-  padding: 2.5rem 2rem;
-  border-top: 3px solid #1C56A4;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  transition: all 0.3s ease;
+/* eje horizontal */
+.pj-timeline-list::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--brand-gold) 0 56px, rgba(28, 86, 164, 0.3) 56px);
 }
 
-.timeline-year-v2 {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: #1C56A4;
-  display: block;
-  margin-bottom: 1rem;
+.pj-timeline-item {
+  position: relative;
+  display: flex;
 }
 
-.timeline-card-v2 h4 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #2C3E50;
-  margin-bottom: 0.75rem;
+.pj-timeline-node {
+  position: absolute;
+  top: calc(-2.25rem + 1px);
+  left: clamp(1.5rem, 2.4vw, 2rem);
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--brand-blue);
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+}
+.pj-timeline-item:first-child .pj-timeline-node { border-color: var(--brand-gold-dark); }
+
+.pj-timeline-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.timeline-card-v2 p {
-  font-size: 0.9rem;
-  color: #64748B;
-  line-height: 1.6;
+.pj-timeline-year {
+  margin: 0.6rem 0 0.9rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--brand-blue);
 }
 
-.timeline-card-v2:hover {
-  border-top-color: #D4AF37;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(28, 86, 164, 0.05);
+/* --- Responsive ----------------------------------------------------------- */
+/* Foto del PageHero: cielo blanco arriba; un velo navy superior devuelve el
+   contraste a las marcas de esquina blancas (motivo compartido con el hero) */
+.pj-hero .bx-pagehero-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(11, 17, 32, 0.55) 0%, rgba(11, 17, 32, 0.18) 22%, transparent 42%);
+}
+
+/* PageHero apilado (<=900px): foto contenida para no estirar la imagen
+   de baja resolución ni empujar el filtro fuera de la primera pantalla */
+@media (max-width: 900px) {
+  .pj-hero .bx-pagehero-media { max-width: 520px; width: 100%; }
+  .pj-hero .bx-pagehero-frame { aspect-ratio: 16 / 9; }
+}
+
+@media (max-width: 1100px) {
+  .pj-page .pj-timeline-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pj-timeline-list::before { display: none; }
+  .pj-page .pj-timeline-list { padding-top: 0; }
+  .pj-timeline-node { display: none; }
 }
 
 @media (max-width: 768px) {
-  .ref-section-title-v2 {
-    font-size: 2.25rem;
+  .pj-filter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9rem;
+    padding: 1rem;
   }
-  .filter-bar-v2 {
-    gap: 1rem;
+  .pj-filter::after { left: 1rem; }
+  .pj-filter-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
   }
+  .pj-filter-btn {
+    justify-content: flex-start;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.68rem;
+    min-width: 0;
+  }
+  .pj-filter-text {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+  .pj-filter-btn:first-child { grid-column: 1 / -1; }
+
+  .pj-card-body { padding: 1.25rem 1.25rem 1.5rem; }
+  .pj-card .pj-card-tag { left: 1rem; bottom: 0.85rem; }
+  .pj-card .pj-card-num { right: 1rem; bottom: 0.85rem; }
+
+  .pj-page .pj-timeline-list { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pj-filter-btn,
+  .pj-filter-btn > i,
+  .pj-card-frame > img { transition-duration: 0.01ms; }
+  .pj-card:hover .pj-card-frame > img,
+  .pj-card:focus-within .pj-card-frame > img { transform: none; }
+}
+
+/* la barra de filtros arranca más cerca de la cabecera */
+.pj-page .pj-projects { padding-top: clamp(2.5rem, 5vw, 4rem); }
+
+@media (max-width: 768px) {
+  .pj-filter-btn {
+    gap: 0.45rem;
+    letter-spacing: 0.03em;
+  }
+  .pj-filter-btn > i { display: none; }
+  .pj-filter-btn.is-active > i { display: block; }
+  .pj-filter-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 420px) {
+  .pj-filter-btn:not(:first-child) .pj-filter-count { display: none; }
 }

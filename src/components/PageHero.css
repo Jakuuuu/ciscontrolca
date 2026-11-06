@@ -1,0 +1,164 @@
+/* ==========================================================================
+   PageHero — cabecera navy de páginas interiores (usa tokens de styles/brand.css)
+   ========================================================================== */
+
+.bx-pagehero {
+  overflow: hidden;
+  padding-top: var(--bx-header-h);
+  font-family: 'Inter', system-ui, sans-serif;
+  box-shadow: inset 0 -1px 0 rgba(119, 178, 255, 0.16);
+}
+
+/* acento dorado sobre el borde inferior, alineado con la columna de texto */
+.bx-pagehero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: max(var(--bx-gutter), calc((100% - var(--bx-max)) / 2 + var(--bx-gutter)));
+  width: 56px;
+  height: 2px;
+  background: var(--brand-gold);
+}
+
+.bx-pagehero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  min-height: clamp(300px, 38vh, 420px);
+  padding-block: clamp(2.75rem, 7vh, 4.5rem) clamp(3rem, 8vh, 5rem);
+}
+
+.bx-pagehero--media .bx-pagehero-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  min-height: clamp(340px, 48vh, 500px);
+}
+
+.bx-pagehero-copy {
+  max-width: 680px;
+  animation: bx-rise 0.8s var(--brand-ease-out) both;
+}
+
+.bx-pagehero-title {
+  margin-bottom: 1.25rem;
+}
+
+.bx-pagehero-subtitle {
+  max-width: 560px;
+}
+
+.bx-pagehero-actions {
+  margin-top: 2.25rem;
+}
+
+/* --- Miga de pan --------------------------------------------------------- */
+.bx-pagehero-crumbs {
+  margin-bottom: 1.5rem;
+}
+.bx-pagehero-crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--brand-soft-dark);
+}
+.bx-pagehero-crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.bx-pagehero-crumbs li + li::before {
+  content: '';
+  width: 10px;
+  height: 1px;
+  background: rgba(119, 178, 255, 0.5);
+}
+.bx-pagehero-crumbs a {
+  color: var(--brand-muted-dark);
+  transition: color 0.25s ease;
+}
+.bx-pagehero-crumbs a:hover {
+  color: #fff;
+}
+.bx-pagehero-crumbs a:focus-visible {
+  outline: 2px solid var(--brand-light) !important;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.bx-pagehero-crumbs [aria-current='page'] {
+  color: #fff;
+}
+
+/* --- Panel fotográfico --------------------------------------------------- */
+.bx-pagehero-media {
+  min-width: 0;
+  animation: bx-fade 1s 0.15s ease both;
+}
+
+.bx-pagehero-frame {
+  aspect-ratio: 16 / 11;
+  max-height: 46vh;
+  width: 100%;
+}
+
+/* Luz ambiental: la foto muy difuminada tiñe la mitad derecha (como el hero) */
+.bx-pagehero-ambient {
+  position: absolute;
+  inset: 0 0 0 45%;
+  z-index: -2;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 45%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 45%);
+}
+.bx-pagehero-ambient-img {
+  position: absolute;
+  inset: -80px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(60px) saturate(1.2);
+  opacity: 0.24;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bx-pagehero-copy,
+  .bx-pagehero-media {
+    animation: bx-fade 0.4s ease both;
+  }
+}
+
+/* --- Responsive ---------------------------------------------------------- */
+@media (max-width: 900px) {
+  .bx-pagehero--media .bx-pagehero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    gap: 2.25rem;
+  }
+  .bx-pagehero-frame {
+    max-height: none;
+    aspect-ratio: 16 / 10;
+  }
+  .bx-pagehero-ambient {
+    inset: 0;
+    -webkit-mask-image: linear-gradient(180deg, transparent 30%, #000 100%);
+    mask-image: linear-gradient(180deg, transparent 30%, #000 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .bx-pagehero-inner {
+    min-height: 0;
+    padding-block: 2rem 2.75rem;
+  }
+  .bx-pagehero-crumbs {
+    margin-bottom: 1.1rem;
+  }
+  .bx-pagehero-actions {
+    margin-top: 1.75rem;
+  }
+}

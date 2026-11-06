@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { projectsDetailedData } from '../../data/projectsDetailedData';
 import { clientsData, timelineData } from '../../data/projectsData';
-import { Building, MapPin, Calendar, ExternalLink, SlidersHorizontal, HeartHandshake } from 'lucide-react';
+import { Building, MapPin, Calendar, SlidersHorizontal, HeartHandshake } from 'lucide-react';
+import PageHero from '../../components/PageHero';
 import './ProjectsV2.css';
 
 const categories = [
@@ -13,110 +14,147 @@ const categories = [
   { id: 'ftth', label: 'FIBRA ÓPTICA' }
 ];
 
+const countFor = (id) =>
+  id === 'all'
+    ? projectsDetailedData.length
+    : projectsDetailedData.filter((p) => p.category === id).length;
+
+const pad = (n) => String(n).padStart(2, '0');
+
 const ProjectsV2 = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const filteredProjects = activeCategory === 'all' 
-    ? projectsDetailedData 
+  const filteredProjects = activeCategory === 'all'
+    ? projectsDetailedData
     : projectsDetailedData.filter(p => p.category === activeCategory);
 
   return (
-    <div className="projects-page-v2">
-      {/* Encabezado y Filtrado */}
-      <section className="projects-section-v2">
-        <div className="container">
-          <div className="ref-section-header-v2">
-            <h1 className="ref-section-title-v2">Estos son algunos de nuestros proyectos</h1>
-            <p className="ref-section-desc-v2">
-              Soluciones de ingeniería de alto impacto ejecutadas bajo los más rigurosos estándares internacionales de calidad y seguridad.
-            </p>
-          </div>
+    <div className="pj-page">
+      <PageHero
+        kicker="Portafolio"
+        title="Estos son algunos de"
+        titleAccent="nuestros proyectos"
+        subtitle="Soluciones de ingeniería de alto impacto ejecutadas bajo los más rigurosos estándares internacionales de calidad y seguridad."
+        className="pj-hero"
+        breadcrumb={[{ label: 'Inicio', to: '/' }, { label: 'Proyectos' }]}
+        image={{
+          src: '/Media/hero/06-ddce-plataforma.jpg',
+          alt: 'Plataforma petrolera costa afuera con sistema de protección DDCE',
+          position: 'center 70%',
+        }}
+      />
 
-          {/* Barra de Filtros */}
-          <div className="filter-bar-v2">
-            <div className="filter-label-v2">
-              <SlidersHorizontal size={16} className="filter-icon-v2" />
+      {/* Filtrado + grilla de proyectos */}
+      <section className="bx-section bx-section--light pj-projects">
+        <div className="bx-container">
+          <div className="pj-filter bx-grid-dark" role="group" aria-labelledby="pj-filter-label">
+            <span className="bx-ticks bx-ticks--top pj-filter-ticks" aria-hidden="true" />
+            <p className="pj-filter-label" id="pj-filter-label">
+              <SlidersHorizontal size={15} aria-hidden="true" />
               <span>FILTRAR</span>
-            </div>
-            <div className="filter-buttons-v2">
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  className={`filter-btn-v2 ${activeCategory === cat.id ? 'active' : ''}`}
-                  onClick={() => setActiveCategory(cat.id)}
-                >
-                  {cat.label}
-                </button>
-              ))}
+            </p>
+            <div className="pj-filter-list">
+              {categories.map((cat) => {
+                const active = activeCategory === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    className={`pj-filter-btn ${active ? 'is-active' : ''}`}
+                    aria-pressed={active}
+                    onClick={() => setActiveCategory(cat.id)}
+                  >
+                    <i aria-hidden="true" />
+                    <span className="pj-filter-text">{cat.label}</span>
+                    <span className="pj-filter-count" aria-hidden="true">{pad(countFor(cat.id))}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* Grilla de Proyectos Premium Filtrados */}
-          <div className="ref-projects-grid-v2">
-            {filteredProjects.map((project) => (
-              <div className="ref-project-card-v2" key={project.id}>
-                <div className="ref-project-img-holder-v2">
-                  <img src={project.image} alt={project.title} />
-                  <span className="ref-project-cat-v2">{project.tag}</span>
-                </div>
-                <div className="ref-project-info-v2">
-                  <div className="project-title-row-v2">
-                    <h3>{project.title}</h3>
-                    <ExternalLink size={16} className="project-link-icon-v2" />
-                  </div>
-                  
-                  {/* Cuadrícula de Metadatos */}
-                  <div className="project-meta-grid-v2">
-                    <div className="meta-item-v2">
-                      <Building size={14} className="meta-icon-v2" />
-                      <span>{project.client}</span>
-                    </div>
-                    <div className="meta-item-v2">
-                      <MapPin size={14} className="meta-icon-v2" />
-                      <span>{project.location}</span>
-                    </div>
-                    <div className="meta-item-v2">
-                      <Calendar size={14} className="meta-icon-v2" />
-                      <span>{project.year}</span>
-                    </div>
-                  </div>
+          <ul className="pj-grid">
+            {filteredProjects.map((project, index) => (
+              <li
+                className="pj-item bx-rise"
+                key={`${activeCategory}-${project.id}`}
+                style={{ animationDelay: `${Math.min(index, 8) * 50}ms` }}
+              >
+                <article className="bx-card bx-card--light bx-card--hover bx-card--accent pj-card">
+                  <figure className="bx-frame bx-frame--shade pj-card-frame">
+                    <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
+                    <span className="bx-ticks bx-ticks--top" aria-hidden="true" />
+                    <span className="bx-tag pj-card-tag"><i aria-hidden="true" />{project.tag}</span>
+                    <span className="bx-num pj-card-num" aria-hidden="true">{pad(index + 1)}</span>
+                  </figure>
 
-                  <p className="project-desc-text-v2">{project.description}</p>
-                </div>
-              </div>
+                  <div className="pj-card-body">
+                    <h3 className="bx-card-title pj-card-title">{project.title}</h3>
+
+                    <ul className="pj-meta">
+                      <li>
+                        <Building size={14} aria-hidden="true" />
+                        <span>{project.client}</span>
+                      </li>
+                      <li>
+                        <MapPin size={14} aria-hidden="true" />
+                        <span>{project.location}</span>
+                      </li>
+                      <li>
+                        <Calendar size={14} aria-hidden="true" />
+                        <span>{project.year}</span>
+                      </li>
+                    </ul>
+
+                    <p className="bx-card-text pj-card-text">{project.description}</p>
+                  </div>
+                </article>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       {/* Clientes de Alta Autoridad */}
-      <section className="projects-clients-section-v2">
-        <div className="container">
-          <h2 className="clients-title-v2">Han Confiado en Nosotros</h2>
-          <div className="clients-grid-v2">
-            {clientsData.map((client, index) => (
-              <div className="client-card-v2" key={index}>
-                <HeartHandshake className="client-icon-v2" size={18} />
-                <span className="client-name-v2">{client}</span>
-              </div>
-            ))}
+      <section className="bx-section bx-section--dark bx-grid-fade pj-clients">
+        <div className="bx-container">
+          <div className="bx-head bx-head--center">
+            <p className="bx-kicker">Clientes</p>
+            <h2 className="bx-title">Han Confiado <span className="bx-title-accent">en Nosotros</span></h2>
           </div>
+          <ul className="pj-clients-grid">
+            {clientsData.map((client, index) => (
+              <li className="bx-card bx-card--hover pj-client" key={index}>
+                <span className="bx-card-icon pj-client-icon" aria-hidden="true">
+                  <HeartHandshake size={18} />
+                </span>
+                <span className="pj-client-name">{client}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
       {/* Trayectoria Timeline */}
-      <section className="projects-timeline-section-v2">
-        <div className="container">
-          <h2 className="timeline-title-v2">Nuestra Trayectoria Histórica</h2>
-          <div className="timeline-grid-v2">
-            {timelineData.map((item, index) => (
-              <div className="timeline-card-v2" key={index}>
-                <span className="timeline-year-v2">{item.year}</span>
-                <h4>{item.subtitle}</h4>
-                <p>{item.description}</p>
-              </div>
-            ))}
+      <section className="bx-section bx-section--white pj-timeline">
+        <div className="bx-container">
+          <div className="bx-head">
+            <p className="bx-kicker">Trayectoria</p>
+            <h2 className="bx-title">Nuestra Trayectoria <span className="bx-title-accent">Histórica</span></h2>
           </div>
+          <ol className="pj-timeline-list">
+            {timelineData.map((item, index) => (
+              <li className="pj-timeline-item" key={index}>
+                <span className="pj-timeline-node" aria-hidden="true" />
+                <div className="bx-card bx-card--hover bx-card--accent pj-timeline-card">
+                  <span className="bx-num" aria-hidden="true">{pad(index + 1)}</span>
+                  <p className="pj-timeline-year">{item.year}</p>
+                  <h3 className="bx-card-title">{item.subtitle}</h3>
+                  <p className="bx-card-text">{item.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
     </div>

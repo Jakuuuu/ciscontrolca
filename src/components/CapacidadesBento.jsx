@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { heroServices } from '../data/heroSlides';
 import './CapacidadesBento.css';
 
 const capacidades = [
@@ -45,45 +46,61 @@ const capacidades = [
   }
 ];
 
+const pad = (n) => String(n).padStart(2, '0');
+// Etiqueta corta del servicio, la misma que usa la tira de fotos del hero (mismo orden).
+const tagFor = (i) => heroServices[i]?.label ?? '';
+
 const CapacidadesBento = () => {
   return (
-    <section className="cap-bento-section">
-      <div className="container">
-        
-        {/* Encabezado de la Sección */}
-        <div className="cap-bento-header">
+    <section className="cap-bento-section" aria-labelledby="cap-bento-title">
+      {/* Banda superior en navy: continúa el hero (retícula + kicker dorado) */}
+      <div className="cap-bento-top bx-grid-dark bx-grid-fade">
+        <div className="bx-container cap-bento-header">
           <div className="cap-bento-title-block">
-            <span className="cap-kicker">NUESTRAS CAPACIDADES</span>
-            <h2 className="cap-title">Soluciones de<br />Ingeniería Crítica</h2>
+            <p className="bx-kicker">NUESTRAS CAPACIDADES</p>
+            <h2 id="cap-bento-title" className="bx-title cap-title">
+              Soluciones de
+              <span className="bx-title-accent bx-title-accent--block">Ingeniería Crítica</span>
+            </h2>
           </div>
           <div className="cap-link-block">
-            <Link to="/servicios" className="cap-view-all-link">
+            <Link to="/servicios" className="bx-btn bx-btn-outline-light cap-view-all-link">
               VER TODOS LOS SERVICIOS
             </Link>
           </div>
         </div>
+      </div>
 
-        {/* Bento Grid */}
-        <div className="cap-bento-grid">
-          {capacidades.map((cap) => (
-            <div 
-              className={`cap-card ${cap.isWide ? 'cap-card-wide' : ''}`} 
-              key={cap.id}
-            >
-              <div className="cap-card-img-holder">
-                <img src={cap.image} alt={cap.title} loading="lazy" />
-              </div>
-              <div className="cap-card-content">
-                <h3>{cap.title}</h3>
-                <p>{cap.desc}</p>
-                <Link to="/servicios" className="cap-card-link">
-                  {cap.linkText} <span className="line-suffix">──</span>
-                </Link>
-              </div>
-            </div>
-          ))}
+      {/* Bento Grid: las tarjetas montan sobre el borde navy/claro */}
+      <div className="cap-bento-body bx-grid-light">
+        <div className="bx-container">
+          <ul className="cap-bento-grid">
+            {capacidades.map((cap, i) => (
+              <li
+                className={`cap-card bx-card bx-card--light bx-card--hover bx-card--accent${cap.isWide ? ' cap-card-wide' : ''}`}
+                key={cap.id}
+              >
+                <figure className="cap-card-media bx-frame bx-frame--shade">
+                  <img src={cap.image} alt={cap.title} loading="lazy" />
+                  <span className="bx-ticks bx-ticks--top" aria-hidden="true"></span>
+                  <span className="cap-card-tag" aria-hidden="true">
+                    <span className="cap-card-num">{pad(i + 1)}</span>
+                    <span className="bx-tag bx-tag--gold"><i></i>{tagFor(i)}</span>
+                  </span>
+                </figure>
+                <div className="cap-card-content">
+                  <h3 className="bx-card-title cap-card-title">{cap.title}</h3>
+                  <p className="bx-card-text cap-card-text">{cap.desc}</p>
+                  <Link to="/servicios" className="cap-card-link">
+                    {cap.linkText}
+                    <span className="bx-sr"> sobre {cap.title}</span>
+                    <span className="cap-card-arrow" aria-hidden="true"></span>
+                  </Link>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
-
       </div>
     </section>
   );
